@@ -1,52 +1,44 @@
 # Pull Request
 
 ## Summary
-
-Provide a brief summary of the changes made in this Pull Request.
+Built a semantic, accessible blog-article HTML page with an accessible contact form.
 
 ---
 
 ## Week
-
-Week:
+Week: 1
 
 ---
 
 ## Topic
-
-Topic:
+Topic: Semantic HTML & Accessibility
 
 ---
 
 ## Changes Made
-
-*
-*
-*
+* Created `semantic-html-page/index.html`
+* Added semantic landmarks and correct heading hierarchy
+* Built accessible contact form with fieldset, legend, labels, validation
 
 ---
 
 ## Testing
-
 Describe how you verified your changes.
-
-* [ ] Code executed successfully
-* [ ] Expected output verified
-* [ ] No runtime errors
+* [x] Code executed successfully
+* [x] Expected output verified
+* [x] No runtime errors
 
 ---
 
 ## Checklist
-
-* [ ] Branch name follows the format `week-NN-topic-slug`
-* [ ] Code follows PEP 8 guidelines
-* [ ] Code has been tested
-* [ ] No unnecessary files are included
-* [ ] Documentation updated (if required)
-* [ ] Ready for review
+* [x] Branch name follows the format `week-NN-topic-slug`
+* [ ] Code follows PEP 8 guidelines (N/A — HTML task)
+* [x] Code has been tested
+* [x] No unnecessary files are included
+* [x] Documentation updated (if required)
+* [x] Ready for review
 
 ---
 
 ## Additional Notes
-
-Add any additional information for the reviewer here.
+Pure HTML, no CSS/JS. Lighthouse accessibility screenshots attached.
