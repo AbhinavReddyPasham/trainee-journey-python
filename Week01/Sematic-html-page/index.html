@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Semantic HTML Matters | Dev Blog</title>
+</head>
+<body>
+
+  <header>
+    <h1>Dev Blog</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1>Why Semantic HTML Matters</h1>
+
+      <section aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Introduction</h2>
+        <p>
+          Semantic HTML means using the correct HTML element for the job,
+          instead of wrapping everything in generic containers. It helps
+          browsers, search engines, and assistive technologies understand
+          the actual meaning and structure of a page.
+        </p>
+      </section>
+
+      <section aria-labelledby="benefits-heading">
+        <h2 id="benefits-heading">Key Benefits</h2>
+
+        <h3>Better Accessibility</h3>
+        <p>
+          Screen readers rely on semantic elements to announce landmarks,
+          headings, and controls correctly, so users can navigate a page
+          without seeing it.
+        </p>
+
+        <h3>Improved SEO</h3>
+        <p>
+          Search engines give more weight to content inside meaningful tags
+          like headings and articles than content buried in unlabeled
+          divs.
+        </p>
+
+        <h3>Easier Maintenance</h3>
+        <p>
+          Code that describes what it means, not just how it looks, is
+          easier for other developers (and future you) to read and update.
+        </p>
+      </section>
+
+      <figure>
+        <img
+          src="https://via.placeholder.com/600x300"
+          alt="Diagram comparing div-based markup to semantic HTML landmarks"
+          width="600"
+          height="300"
+        >
+        <figcaption>
+          A simple comparison of non-semantic vs semantic page structure.
+        </figcaption>
+      </figure>
+
+      <section aria-labelledby="conclusion-heading">
+        <h2 id="conclusion-heading">Conclusion</h2>
+        <p>
+          Writing semantic HTML from the start costs nothing extra and pays
+          off in accessibility, SEO, and long-term maintainability.
+        </p>
+      </section>
+
+      <aside aria-label="Related resources">
+        <h2>Related Articles</h2>
+        <ul>
+          <li><a href="#">Understanding ARIA Landmarks</a></li>
+          <li><a href="#">A Beginner's Guide to Accessible Forms</a></li>
+        </ul>
+      </aside>
+    </article>
+
+    <section aria-labelledby="contact-heading" id="contact">
+      <h2 id="contact-heading">Contact Us</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Get in touch</legend>
+
+          <div>
+            <label for="full-name">Full Name</label><br>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              required
+              minlength="2"
+              maxlength="50"
+            >
+          </div>
+
+          <div>
+            <label for="email">Email Address</label><br>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label><br>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              placeholder="10-digit number"
+            >
+          </div>
+
+          <div>
+            <label for="message">Message</label><br>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              minlength="10"
+            ></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dev Blog. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
