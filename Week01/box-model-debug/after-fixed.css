@@ -1,0 +1,51 @@
+/* FIX #1: Global border-box reset.
+   Now width/padding/border are all CONTAINED within the declared width.
+   A 400px box stays 400px, no matter how much padding/border it has. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  padding: 40px;
+}
+
+.container {
+  width: 400px;
+  background: #ddd;
+  border: 2px solid #333;
+}
+
+.card {
+  width: 400px;   /* now genuinely renders at 400px total, padding/border included */
+  padding: 20px;
+  border: 2px solid red;
+  background: white;
+  margin-top: 30px;
+}
+
+/* FIX #2: Prevent margin-collapse between parent/child by giving the
+   parent a border/padding boundary — collapsing only happens when
+   there is NOTHING (no border/padding/content) separating the two
+   margins. Adding padding to .card above already broke the collapse
+   here, since .card now has padding separating it from .card-inner. */
+.card-inner {
+  margin-top: 40px;
+  background: #eef;
+  padding: 10px;
+}
+
+/* FIX #3: Sibling margin-collapse fix — use padding OR flex/gap
+   instead of relying on adjoining margins, so spacing is explicit
+   and predictable (stacking, not collapsing). */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;   /* explicit, predictable spacing — no collapsing behavior at all */
+}
+.box-a, .box-b {
+  padding: 10px;
+}
+.box-a { background: #fdd; }
+.box-b { background: #dfd; }
