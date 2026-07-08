@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Box Model Debug — AFTER (Fixed)</title>
+<link rel="stylesheet" href="after-fixed.css">
+</head>
+<body>
+
+  <h1>AFTER: Fixed Layout</h1>
+
+  <div class="container">
+    <div class="card">
+      This card now genuinely renders at 400px total width — border-box
+      keeps padding + border inside the declared width instead of adding
+      to it. Verify in DevTools: computed width should read 400px.
+
+      <div class="card-inner">
+        Because .card has padding (a boundary), the parent/child margins
+        no longer collapse — you get the full, predictable spacing.
+      </div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="box-a">Box A</div>
+    <div class="box-b">Box B — spacing now uses flex gap (30px), no collapse ambiguity</div>
+  </div>
+
+</body>
+</html>

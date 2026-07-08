@@ -1,0 +1,51 @@
+/* FAULT #1: No box-sizing reset.
+   Default is content-box, so width/padding/border ADD UP
+   instead of being contained within the declared width. */
+
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  padding: 40px;
+}
+
+.container {
+  width: 400px;
+  background: #ddd;
+  border: 2px solid #333;
+}
+
+/* This card is declared as width: 400px, but padding + border
+   push its ACTUAL rendered width way past 400px.
+   content-box math: 400 (width) + 40 (padding L+R) + 4 (border L+R) = 444px total */
+.card {
+  width: 400px;
+  padding: 20px;
+  border: 2px solid red;
+  background: white;
+  margin-top: 30px;   /* FAULT #2 setup: margin-collapse trigger below */
+}
+
+/* FAULT #2: Margin collapsing.
+   Both .card and .card-inner have top margins with no border/padding
+   between the parent and child — their margins COLLAPSE into a single
+   margin (the larger of the two: 40px), instead of stacking to 30+40=70px.
+   This is confusing because it LOOKS like the margin didn't apply at all. */
+.card-inner {
+  margin-top: 40px;
+  background: #eef;
+  padding: 10px;
+}
+
+/* FAULT #3: Two adjacent sibling boxes — vertical margins between them
+   collapse to the LARGER value (30px), not the sum (20+30=50px).
+   Easy to miss when reasoning about spacing between stacked elements. */
+.box-a {
+  margin-bottom: 30px;
+  background: #fdd;
+  padding: 10px;
+}
+.box-b {
+  margin-top: 20px;
+  background: #dfd;
+  padding: 10px;
+}

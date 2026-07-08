@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Box Model Debug — BEFORE (Broken)</title>
+<link rel="stylesheet" href="before-broken.css">
+</head>
+<body>
+
+  <h1>BEFORE: Broken Layout</h1>
+
+  <div class="container">
+    <div class="card">
+      This card's declared width is 400px, but padding + border make it
+      render wider than its container. Open DevTools and check the
+      actual rendered width vs the CSS width.
+
+      <div class="card-inner">
+        Margin-top here is 40px, but visually it looks like only 40px
+        total gap exists between container top and this box — NOT
+        30px (parent) + 40px (child) = 70px, because the margins collapsed.
+      </div>
+    </div>
+  </div>
+
+  <div class="box-a">Box A (margin-bottom: 30px)</div>
+  <div class="box-b">Box B (margin-top: 20px) — gap looks like 30px, not 50px</div>
+
+</body>
+</html>
