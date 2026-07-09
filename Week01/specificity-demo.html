@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Specificity Demo</title>
+  <style>
+    p { color: blue; }
+    .text { color: green; }
+    #main p { color: red; }
+    div p.text { color: purple; }
+    #main .text { color: orange; }
+    p.text.highlight { color: deeppink; }
+    div#main p.text.highlight { color: teal; }
+    .text.highlight { color: black; }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <p class="text highlight">Which color am I?</p>
+  </div>
+</body>
+</html>
