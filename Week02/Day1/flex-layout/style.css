@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header,
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    display:flex;
+    min-height:500px;
+}
+
+aside{
+    width:250px;
+    background:#3498db;
+    color:white;
+    padding:20px;
+}
+
+aside ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+aside li{
+    margin-bottom:15px;
+}
+
+main{
+    flex:1;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+    background:#ecf0f1;
+}
+
+.card{
+    width:200px;
+    height:150px;
+    background:white;
+    border:1px solid gray;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+}
