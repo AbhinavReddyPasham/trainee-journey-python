@@ -1,14 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trainee Journey</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#7c3aed,#0ea5e9);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:white;
+    font-size:55px;
+    margin-bottom:60px;
+    letter-spacing:3px;
+    text-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+ul{
+    display:flex;
+    gap:60px;
+    list-style:none;
+}
+
+.card{
+    width:250px;
+    height:180px;
+    perspective:1200px;
+}
+
+.inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .8s;
+    transform-style:preserve-3d;
+}
+
+.card:hover .inner{
+    transform:rotateY(180deg) scale(1.08);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:25px;
+    backface-visibility:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+}
+
+.front{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    transition:.4s;
+}
+
+.card:hover .front{
+    box-shadow:
+    0 0 25px #00e5ff,
+    0 0 60px #00e5ff;
+}
+
+.back{
+    background:linear-gradient(135deg,#00d2ff,#3a47d5);
+    transform:rotateY(180deg);
+}
+
+.front h2,
+.back h2{
+    font-size:32px;
+}
+
+.front p,
+.back p{
+    margin-top:10px;
+    opacity:.8;
+}
+
+a{
+    text-decoration:none;
+}
+
+.arrow{
+    margin-top:20px;
+    font-size:28px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+
+0%,100%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-10px);
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-   <ul>
-        <li><a href="/Week01">Week 01</a></li>
-        <li><a href="/Week02">Week 02</a></li>
-    </ul>
+
+<div class="container">
+
+<h1>🚀 Trainee Journey</h1>
+
+<ul>
+
+<li>
+
+<a href="Week01/">
+
+<div class="card">
+
+<div class="inner">
+
+<div class="front">
+
+<h2>Week 01</h2>
+
+<p>HTML & CSS Basics</p>
+
+<div class="arrow">➜</div>
+
+</div>
+
+<div class="back">
+
+<h2>Open</h2>
+
+<p>Start Learning →</p>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Week02/index.html">
+
+<div class="card">
+
+<div class="inner">
+
+<div class="front">
+
+<h2>Week 02</h2>
+
+<p>Responsive Design</p>
+
+<div class="arrow">➜</div>
+
+</div>
+
+<div class="back">
+
+<h2>Continue</h2>
+
+<p>css&browserfundamentals</p>
+
+</div>
+
+</div>
+
+</div>
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
 </body>
 </html>
