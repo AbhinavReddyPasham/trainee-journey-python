@@ -29,6 +29,7 @@ def square(number):
 
 print(square(5))
 
+
 print(square(5))
 
 print(square(10))
